@@ -6,6 +6,7 @@ import { useState ,useEffect} from 'react'
 import Footer from './components/Footer'
 import Favroutes from './components/Favroutes'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import DetailsOfrecipe from './components/DetailsOfrecipe'
 
 
 function App() {
@@ -61,6 +62,7 @@ function App() {
                 {Recipes.map((recipe) => (
                   <Dishes
                     key={recipe.idMeal}
+                    mealId={recipe.idMeal}
                     title={recipe.strMeal}
                     image={recipe.strMealThumb}
                     ingredients={recipe.strIngredients || 'N/A'}
@@ -71,6 +73,7 @@ function App() {
             }
           />
           <Route path="/favorites" element={< Favroutes favRecipes={fav}  />} />
+          <Route path="/DetailsOfrecipe/:id" element={<DetailsOfrecipe />} />
         </Routes>
 
 {/*          
