@@ -50,14 +50,14 @@ function App() {
         <Header setsearchrecipes={setsearchrecipes} countOfItems = {fav.length} />
       </div>
       <div className='flex items-center justify-center'>
-        <h1 className=' font-extrabold text-lime-500 text-3xl underline mt-40 mb-7 mr-48' > dishes </h1>
+        <h1 className=' font-extrabold text-lime-500 text-3xl underline mt-40 mb-7 max-sm:text-xl sm:text-xl md:text-2xl ' > dishes </h1>
       </div>
-      <div className='flex flex-col items-center justify-center mr-48 flex-grow mb-20 '>
+      <div className='flex flex-col items-center justify-center flex-grow mb-20 '>
       <Routes>
           <Route
             path="/"
             element={
-              <div className="flex flex-row flex-wrap items-center ml-12 justify-center ">
+              <div className="flex flex-row flex-wrap items-center justify-center ">
                 {Recipes.map((recipe) => (
                   <Dishes
                     key={recipe.idMeal}

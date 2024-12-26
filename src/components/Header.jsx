@@ -9,21 +9,15 @@ const Header = ({ setsearchrecipes , countOfItems}) => {
       setsearchrecipes(searchInput)
     }
   }
-  const handlelogin = () =>{
-    console.log("login clicked")
-  }
 
-  const handlesignin = ()=>{
-    console.log("sign-in clicked")
-  }
   return (
     <div className='p-6 flex items-center justify-between bg-gray-200'>
         <div>
-            <h2 className='text-3xl text-gray-900 font-extrabold'>logo</h2>
+            <h2 className='text-3xl sm:text-2xl md:text-2xl max-sm:text-2xl text-gray-900 font-extrabold'>logo</h2>
         </div>
 
         <div> 
-            <input className='rounded-full h-11 w-80 pl-12 pr-4 bg-purple-100 shadow-lg outline-none focus:ring focus:ring-purple-400  ' 
+            <input className='rounded-full h-11 max-sm:w-32 max-sm:pl-5 w-80 pl-12 pr-4 bg-purple-100 shadow-lg outline-none focus:ring focus:ring-purple-400  ' 
             type="text"
             value={searchInput}
             onChange={(e) => setSearchInput(e.target.value)} 
@@ -32,10 +26,10 @@ const Header = ({ setsearchrecipes , countOfItems}) => {
             onClick={handlesubmit}>search</button>
         </div>
         <div className='flex '>
-           <Link to="/favorites" className="text-xl font-bold text-blue-600">
-          Favorites ({countOfItems})
-           </Link>
-           
+        <Link to="/favorites" className="flex items-center text-xl font-bold text-blue-600">
+          <span className="hidden sm:inline">Favorites ({countOfItems})</span>
+          <span className="sm:hidden text-2xl text-yellow-400 ml-2">&#9733;</span>
+</Link>
         </div>
     
   </div>
